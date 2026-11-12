@@ -119,7 +119,7 @@
 
 Три редакционные карточки располагаются в один ряд на desktop, в две колонки на планшете и в один столбец на mobile. Обложка — фотография в пропорции 16:10 с тёмной матовой меткой формата поверх изображения. Заголовок статьи — 17/23, 500; под ним — короткое описание 14/20 вторичного цвета. Ссылка «Читать материал» оформлена тёмной кнопкой с белым текстом и стрелкой; кнопки выравниваются по нижнему краю карточек.
 
-Фотографии: [объектив камеры](https://www.pexels.com/photo/camera-lens-on-white-background-16355819/), [отражение на объективе](https://www.pexels.com/photo/lens-reflection-equipment-camera-lens-1679607/) — Pexels; [светофильтр в руке](https://unsplash.com/photos/person-holding-round-black-and-white-lens-JqUpXssLJNQ) — Unsplash.
+Обложки линзы и зеркала используют локальные фотографии `assets/catalog-optical-components.jpg` и `assets/hero-optical-bench.jpg`, чтобы загрузка не зависела от внешнего CDN. Фото светофильтра — [Unsplash](https://unsplash.com/photos/person-holding-round-black-and-white-lens-JqUpXssLJNQ).
 
 ### Вопросы и ответы
 
