@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ЛБТЭК — оптика, оптомеханика и инженерные решения для лабораторий">
+  <meta name="theme-color" content="#FFFFFF">
+  <title>ЛБТЭК — оптика и оптомеханика для точных задач · Onest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js?v=5" defer></script>
+  <style>
+    @font-face {
+      font-family: "Onest";
+      src: url("assets/onest-variable.ttf") format("truetype");
+      font-weight: 100 900;
+      font-display: swap;
+    }
+
+    main :is(h1, h2, h3, .hero-description, .section-heading > p,
+      .chip-content strong, .category-copy strong, .secondary-copy strong,
+      .solution-card > strong, .tool-card > strong) {
+      font-family: "Onest", Arial, sans-serif;
+    }
+
+    main .hero-info h1, main section h2[id] {
+      font-weight: 500;
+      line-height: 1.08;
+      letter-spacing: -.035em;
+    }
+
+    main .hero-info h1 { font-size: clamp(38px, 4.8vw, 66px); }
+    main section h2[id] { font-size: clamp(30px, 3.2vw, 44px); }
+
+    main :is(h3, .hero-description, .section-heading > p) {
+      font-size: clamp(17px, 1.45vw, 20px);
+      line-height: 1.3;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="topline">
+      <div class="topline-inner container">
+        <a href="#buyers">Официальный поставщик</a>
+        <div class="topline-contacts">
+          <a href="tel:+74951366368">+7 (495) 136-63-68</a>
+          <a href="mailto:info@lbtek.shop">info@lbtek.shop</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-shell container">
+      <button class="button button-primary catalog-toggle" type="button" aria-expanded="false" aria-label="Открыть каталог" aria-controls="catalog-panel">
+        <img class="catalog-icon" src="assets/category-2.svg" alt="" width="24" height="24">
+        <span class="faq-icon catalog-close-icon" aria-hidden="true" hidden></span>
+        <span class="catalog-label">Каталог</span>
+      </button>
+
+      <div class="brand-cluster" aria-label="Партнёры">
+        <a class="brand" href="#top" aria-label="ЛБТЭК — на главную">
+          <img src="assets/lbtech-red.svg" alt="ЛБТЭК" width="116" height="28">
+        </a>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <img class="partner-brand" src="assets/lls-logo.svg" alt="LLS" width="301" height="100">
+      </div>
+
+      <nav class="main-nav" id="main-nav" aria-label="Основная навигация">
+        <form class="nav-search" action="#catalog" role="search">
+          <button class="nav-search-toggle" type="button" aria-label="Открыть поиск" aria-expanded="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 4 4"/></svg>
+          </button>
+          <input type="search" name="q" aria-label="Поиск по каталогу" placeholder="Артикул или название" tabindex="-1">
+        </form>
+
+        <div class="nav-links">
+          <a href="#solutions">Решения</a>
+          <a href="#services">Услуги</a>
+          <a href="#calculators">Калькуляторы</a>
+          <a href="#knowledge">База знаний</a>
+          <a href="#buyers">Покупателям</a>
+          <a href="#about">О компании</a>
+          <a href="#contacts">Контакты</a>
+        </div>
+
+        <button class="nav-return-toggle" type="button" aria-label="Вернуть основное меню">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </nav>
+
+      <div class="header-actions">
+        <a class="button button-secondary engineer-link" href="#request" aria-label="Консультация менеджера">
+          <span>Консультация менеджера</span>
+        </a>
+
+        <a class="cart-link" href="#request" aria-label="Корзина, 0 товаров">
+          <img class="cart-icon" src="assets/shopping-cart.svg" alt="" width="24" height="24">
+          <span class="cart-count">0</span>
+        </a>
+
+        <button class="mobile-search-toggle" type="button" aria-label="Открыть поиск" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 4 4"/></svg>
+        </button>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Открыть меню">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="catalog-panel container" id="catalog-panel" hidden>
+      <div class="catalog-panel-heading">
+        <span>Каталог оборудования</span>
+        <strong>13 направлений</strong>
+        <span>849 позиций</span>
+        <a class="catalog-panel-all" href="#catalog">Все направления <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></a>
+      </div>
+      <nav class="catalog-panel-grid" aria-label="Направления каталога">
+        <a href="#catalog"><svg class="catalog-panel-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M5 7v2a7 7 0 0 0 14 0V7m-7 9v5m-5 0h10"/></svg><span>Оптомеханика</span><small>182</small></a>
+        <a href="#catalog"><svg class="catalog-panel-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 18 8-14 10 15-11 2zM11 4l-1 17"/></svg><span>Оптические компоненты</span><small>196</small></a>
+        <a href="#catalog"><svg class="catalog-panel-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="7" height="10" rx="1.5"/><rect x="15" y="8" width="7" height="7" rx="1.5"/><path d="M9 10h6M5.5 15v4m13-4v4M2 19h20"/></svg><span>Научные системы и комплекты</span><small>75</small></a>
+        <a href="#catalog"><svg class="catalog-panel-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 18h3c6 0 5-12 12-12h4M5 18c5 0 5-6 12-6h4M5 18h16"/></svg><span>Волоконная оптика и компоненты</span><small>70</small></a>
+        <a href="#catalog"><svg class="catalog-panel-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12h20m-5-5 5 5-5 5"/><circle cx="8" cy="12" r="3" fill="currentColor" stroke="none"/></svg><span>Управление перемещением</span><small>50</small></a>
+        <a href="#catalog"><svg class="catalog-panel-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4v16h18M6 14h3l3-8 3 10 2-5h4"/></svg><span>Фотодетектирование и анализ</span><small>58</small></a>
+        <a href="#catalog"><svg class="catalog-panel-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 11 6-8 4 3-6 8zM15 11c5 2 5 8 1 10M5 21h15M4 16h7"/></svg><span>Лабораторный инструмент</span><small>53</small></a>
+        <a href="#catalog"><svg class="catalog-panel-icon" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="12" rx="4.5" ry="10" transform="rotate(45 12 12)"/><ellipse cx="12" cy="12" rx="4.5" ry="10" transform="rotate(-45 12 12)"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg><span>Квантовая оптика</span><small>51</small></a>
+        <a href="#catalog"><svg class="catalog-panel-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-5 9 5-9 5zM3 16l9 5 9-5"/></svg><span>Микро- и нанооптика</span><small>40</small></a>
+        <a href="#catalog"><svg class="catalog-panel-icon" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="8" cy="12" rx="3" ry="9"/><ellipse cx="17" cy="12" rx="2.5" ry="6"/><path d="M2 12h3m6 0h3.5m5 0H22"/></svg><span>Оптические системы</span><small>38</small></a>
+        <a href="#catalog"><svg class="catalog-panel-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18h12M7 15a5 5 0 1 1 10 0zM12 3v2M3 7l2 2m16-2-2 2"/></svg><span>Источники света</span><small>31</small></a>
+        <a href="#catalog"><svg class="catalog-panel-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m2 11 12-7 8 4-12 7zM2 11v4l8 5 12-8V8m-12 7v5"/></svg><span>Оптические столы и плиты</span><small>21</small></a>
+        <a href="#catalog"><svg class="catalog-panel-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M12 4v16M7 7l10 10M17 7 7 17"/><circle cx="12" cy="12" r="3"/></svg><span>Модуляция излучения</span><small>14</small></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-left">
+        <div class="hero-info">
+          <h1 id="hero-title">Оптика и оптомеханика для точных задач</h1>
+          <div class="hero-intro-row">
+            <p class="hero-description">Компоненты, узлы и инженерные решения для научных исследований, разработок и производства.</p>
+            <a class="button button-dark hero-catalog" href="#catalog">В каталог <svg class="arrow-icon arrow-icon-short" viewBox="0 0 24 16" aria-hidden="true"><path d="M1 8h18M14 3l5 5-5 5"/></svg></a>
+          </div>
+        </div>
+        <nav class="hero-chips" aria-label="Быстрые сценарии">
+          <a href="#catalog">
+            <span class="chip-visual"><img src="assets/filter-fan.png" alt="" width="384" height="269"></span>
+            <span class="chip-content"><strong>Подобрать компонент</strong><span>Перейти в каталог</span></span>
+            <span class="chip-action card-arrow"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></span>
+          </a>
+          <a href="#services">
+            <span class="chip-visual"><img src="assets/custom-prism.png" alt="" width="384" height="269"></span>
+            <span class="chip-content"><strong>Заказать изготовление</strong><span>Оптика по чертежу</span></span>
+            <span class="chip-action card-arrow"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></span>
+          </a>
+          <a href="#services">
+            <span class="chip-visual"><img src="assets/laboratory-set.png" alt="" width="384" height="269"></span>
+            <span class="chip-content"><strong>Оснастить лабораторию</strong><span>Комплексные решения</span></span>
+            <span class="chip-action card-arrow"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="hero-side">
+        <section class="hero-search-panel" aria-labelledby="search-title">
+          <h3 id="search-title">Быстрый поиск по каталогу</h3>
+          <form class="hero-search" action="#catalog" role="search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 4 4"/></svg>
+            <input type="search" name="q" aria-label="Поиск по каталогу" placeholder="Артикул, аналог Thorlabs или название">
+            <button type="submit" aria-label="Найти"><span>Найти</span></button>
+          </form>
+        </section>
+
+        <div class="hero-media" aria-label="Галерея оптического оборудования">
+          <div class="hero-slides" aria-live="polite">
+            <img class="hero-slide is-active" src="assets/hero-stock-lab-equipment.jpg" alt="Инженер работает с лабораторным оборудованием" width="4256" height="2832" data-title="Оптика для точных задач" data-description="Компоненты · системы · инженерная поддержка">
+            <img class="hero-slide" src="assets/hero-stock-optics-inspection.jpg" alt="Специалист осматривает электронную плату под микроскопом" width="7212" height="4813" data-title="Оптические компоненты" data-description="Точная работа с оптическими и электронными системами">
+            <img class="hero-slide" src="assets/hero-stock-laser-lab.jpg" alt="Лазерная установка для обработки деталей" width="5498" height="3671" data-title="Изготовление по чертежу" data-description="Точная обработка и производство компонентов">
+            <img class="hero-slide" src="assets/hero-stock-microscope.jpg" alt="Лабораторный микроскоп для точных исследований" width="6000" height="4000" data-title="Оснащение лабораторий" data-description="Оборудование для исследований и производства">
+          </div>
+          <div class="hero-media-caption" aria-live="polite">
+            <strong>Оптика для точных задач</strong>
+            <span>Компоненты · системы · инженерная поддержка</span>
+          </div>
+          <div class="hero-slider-controls" aria-label="Управление галереей">
+            <button class="hero-slider-button" type="button" data-slide-direction="previous" aria-label="Предыдущее изображение">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7 7-7-7 7-7"/></svg>
+            </button>
+            <button class="hero-slider-button" type="button" data-slide-direction="next" aria-label="Следующее изображение">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog-section container" id="catalog" aria-labelledby="catalog-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="catalog-title">13 направлений каталога</h2>
+        </div>
+        <p>849 позиций для лабораторий,<br> исследований и производства</p>
+      </div>
+
+      <div class="catalog-featured">
+        <a class="category-card" href="#catalog">
+          <span class="category-image"><img src="assets/catalog-optomechanics-new.png" alt="Набор оптомеханических держателей LBTEK" width="960" height="540" loading="lazy"></span>
+          <span class="category-copy"><strong>Оптомеханика</strong><span>182 позиции</span></span>
+          <span class="category-arrow card-arrow"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></span>
+        </a>
+        <a class="category-card" href="#catalog">
+          <span class="category-image"><img src="assets/catalog-optical-components-new.png" alt="Оптические компоненты LBTEK: фильтры и оптика" width="1200" height="1200" loading="lazy"></span>
+          <span class="category-copy"><strong>Оптические компоненты</strong><span>196 позиций</span></span>
+          <span class="category-arrow card-arrow"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></span>
+        </a>
+        <a class="category-card" href="#catalog">
+          <span class="category-image"><img src="assets/catalog-scientific-systems-new.png" alt="Оптические системы и оптические узлы LBTEK" width="960" height="640" loading="lazy"></span>
+          <span class="category-copy"><strong>Научные системы и комплекты</strong><span>75 позиций</span></span>
+          <span class="category-arrow card-arrow"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></span>
+        </a>
+        <a class="category-card" href="#catalog">
+          <span class="category-image"><img src="assets/catalog-fiber-optics-new.png" alt="Волоконная оптика и оптоволоконные компоненты" width="960" height="901" loading="lazy"></span>
+          <span class="category-copy"><strong>Волоконная оптика и компоненты</strong><span>70 позиций</span></span>
+          <span class="category-arrow card-arrow"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></span>
+        </a>
+      </div>
+
+      <div class="catalog-secondary">
+        <a href="#catalog">
+          <svg class="catalog-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12h20m-5-5 5 5-5 5"/><circle cx="8" cy="12" r="3" fill="currentColor" stroke="none"/></svg>
+          <span class="secondary-copy"><strong>Управление перемещением</strong><small>50 позиций</small></span>
+          <span class="secondary-arrow card-arrow"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></span>
+        </a>
+        <a href="#catalog">
+          <svg class="catalog-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4v16h18M6 14h3l3-8 3 10 2-5h4"/></svg>
+          <span class="secondary-copy"><strong>Фотодетектирование и анализ</strong><small>58 позиций</small></span><span class="secondary-arrow card-arrow"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></span></a>
+        <a href="#catalog">
+          <svg class="catalog-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 11 6-8 4 3-6 8zM15 11c5 2 5 8 1 10M5 21h15M4 16h7"/></svg>
+          <span class="secondary-copy"><strong>Лабораторный инструмент</strong><small>53 позиции</small></span><span class="secondary-arrow card-arrow"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></span></a>
+        <a href="#catalog">
+          <svg class="catalog-icon" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="12" rx="4.5" ry="10" transform="rotate(45 12 12)"/><ellipse cx="12" cy="12" rx="4.5" ry="10" transform="rotate(-45 12 12)"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
+          <span class="secondary-copy"><strong>Квантовая оптика</strong><small>51 позиция</small></span><span class="secondary-arrow card-arrow"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></span></a>
+        <a href="#catalog">
+          <svg class="catalog-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-5 9 5-9 5zM3 16l9 5 9-5"/></svg>
+          <span class="secondary-copy"><strong>Микро- и нанооптика</strong><small>40 позиций</small></span><span class="secondary-arrow card-arrow"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></span></a>
+        <a href="#catalog">
+          <svg class="catalog-icon" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="8" cy="12" rx="3" ry="9"/><ellipse cx="17" cy="12" rx="2.5" ry="6"/><path d="M2 12h3m6 0h3.5m5 0H22"/></svg>
+          <span class="secondary-copy"><strong>Оптические системы</strong><small>38 позиций</small></span><span class="secondary-arrow card-arrow"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></span></a>
+        <a href="#catalog">
+          <svg class="catalog-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18h12M7 15a5 5 0 1 1 10 0zM12 3v2M3 7l2 2m16-2-2 2"/></svg>
+          <span class="secondary-copy"><strong>Источники света</strong><small>31 позиция</small></span><span class="secondary-arrow card-arrow"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></span></a>
+        <a href="#catalog">
+          <svg class="catalog-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m2 11 12-7 8 4-12 7zM2 11v4l8 5 12-8V8m-12 7v5"/></svg>
+          <span class="secondary-copy"><strong>Оптические столы и плиты</strong><small>21 позиция</small></span><span class="secondary-arrow card-arrow"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></span></a>
+        <a class="catalog-all" href="#catalog">
+          <svg class="catalog-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>
+          <span class="secondary-copy"><strong>Все направления</strong><small>13 направлений</small></span><span class="secondary-arrow card-arrow"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></span></a>
+      </div>
+    </section>
+
+    <section class="stats-section container" aria-labelledby="stats-title" hidden>
+      <div class="stats-heading">
+        <h2 id="stats-title">Оптика и фотоника для точных задач</h2>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <strong>849</strong>
+          <p>позиций в структуре каталога</p>
+        </div>
+        <div class="stat-item">
+          <strong>8</strong>
+          <p>лет с основания в 2018 году</p>
+        </div>
+        <div class="stat-item">
+          <strong>200+</strong>
+          <p>университетов и институтов</p>
+          <div class="stat-additional"><strong>300+</strong><span>инновационных компаний</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-section stats-focus container" aria-labelledby="stats-focus-title">
+      <div class="stats-heading">
+        <h2 id="stats-focus-title">Оптика и фотоника для точных задач</h2>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <strong>849</strong>
+          <p>позиций в структуре каталога</p>
+        </div>
+        <div class="stat-item">
+          <strong>8</strong>
+          <p>лет с основания в 2018 году</p>
+        </div>
+        <div class="stat-item">
+          <strong>200+</strong>
+          <p>университетов и институтов</p>
+          <div class="stat-additional"><strong>300+</strong><span>инновационных компаний</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="solutions-section container" id="solutions" aria-labelledby="solutions-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="solutions-title">Решения для ваших задач</h2>
+        </div>
+        <a class="section-link" href="#solutions">Все решения <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></a>
+      </div>
+
+      <div class="solutions-grid">
+        <a class="solution-card" href="#solutions">
+          <span class="solution-top"><span class="solution-arrow card-arrow"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></span></span>
+          <span class="solution-visual"><img src="assets/solution-quantum.png" alt="Квантовая оптическая система" width="1867" height="842" loading="lazy"></span>
+          <strong>Квантовые технологии</strong>
+        </a>
+
+        <a class="solution-card" href="#solutions">
+          <span class="solution-top"><span class="solution-arrow card-arrow"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></span></span>
+          <span class="solution-visual"><img src="assets/solution-microscopy.png" alt="Объектив микроскопа и предметное стекло" width="1870" height="841" loading="lazy"></span>
+          <strong>Биовизуализация и микроскопия</strong>
+        </a>
+
+        <a class="solution-card" href="#solutions">
+          <span class="solution-top"><span class="solution-arrow card-arrow"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></span></span>
+          <span class="solution-visual"><img src="assets/solution-nano.png" alt="Микрооптическая структура" width="1869" height="842" loading="lazy"></span>
+          <strong>Микро- и нанооптика</strong>
+        </a>
+
+        <a class="solution-card" href="#solutions">
+          <span class="solution-top"><span class="solution-arrow card-arrow"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></span></span>
+          <span class="solution-visual"><img src="assets/solution-laser.png" alt="Оптический узел для лазерной обработки" width="1860" height="846" loading="lazy"></span>
+          <strong>Прецизионная лазерная обработка</strong>
+        </a>
+
+        <a class="solution-card" href="#solutions">
+          <span class="solution-top"><span class="solution-arrow card-arrow"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></span></span>
+          <span class="solution-visual"><svg viewBox="0 0 120 96" aria-hidden="true"><path d="M28 58l32-16 32 16-32 16zM28 46l32-16 32 16M28 34l32-16 32 16M28 58v12l32 16 32-16V58"/><path class="muted" d="M60 74v12M44 50l32 16M76 50l-32 16"/></svg></span>
+          <strong>Лазерное аддитивное производство</strong>
+        </a>
+
+        <a class="solution-card" href="#solutions">
+          <span class="solution-top"><span class="solution-arrow card-arrow"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></span></span>
+          <span class="solution-visual"><svg viewBox="0 0 120 96" aria-hidden="true"><rect x="34" y="22" width="52" height="52" rx="5"/><rect x="48" y="36" width="24" height="24" rx="2"/><path class="muted" d="M44 12v10M60 12v10M76 12v10M44 74v10M60 74v10M76 74v10M24 32h10M24 48h10M24 64h10M86 32h10M86 48h10M86 64h10"/></svg></span>
+          <strong>Полупроводниковая промышленность</strong>
+        </a>
+
+        <a class="solution-card" href="#solutions">
+          <span class="solution-top"><span class="solution-arrow card-arrow"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></span></span>
+          <span class="solution-visual"><svg viewBox="0 0 120 96" aria-hidden="true"><path d="M16 48h18c10 0 10-24 26-24s16 48 32 48h12M16 56h18c10 0 10-24 26-24"/><circle cx="16" cy="48" r="5"/><circle cx="104" cy="72" r="5"/><path class="muted" d="M30 20v16M90 56v16"/></svg></span>
+          <strong>Оптоволоконная связь</strong>
+        </a>
+
+        <a class="solution-card" href="#solutions">
+          <span class="solution-top"><span class="solution-arrow card-arrow"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></span></span>
+          <span class="solution-visual"><svg viewBox="0 0 120 96" aria-hidden="true"><path d="M20 24h38v48H20zM62 24h38v48H62zM58 24c4-4 8-4 12 0M58 72c4-4 8-4 12 0"/><circle cx="40" cy="44" r="9"/><path class="muted" d="M70 40h18M70 50h18M28 60h24"/></svg></span>
+          <strong>Образование и учебные лаборатории</strong>
+        </a>
+      </div>
+    </section>
+
+    <section class="tools-section container" id="calculators" aria-labelledby="tools-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="tools-title">Инструменты инженера</h2>
+        </div>
+      </div>
+
+      <div class="tools-grid">
+        <a class="tool-card" href="#calculators">
+          <img class="tool-symbol" src="assets/calculator-wavelength.png" alt="" width="320" height="240">
+          <strong>Калькулятор длины волны</strong>
+          <span class="tool-arrow card-arrow"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></span>
+        </a>
+        <a class="tool-card" href="#calculators">
+          <img class="tool-symbol" src="assets/calculator-incidence.png" alt="" width="320" height="240">
+          <strong>Расчёт угла падения</strong>
+          <span class="tool-arrow card-arrow"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></span>
+        </a>
+        <a class="tool-card" href="#calculators">
+          <img class="tool-symbol" src="assets/calculator-depth.png" alt="" width="320" height="240">
+          <strong>Глубина резкости</strong>
+          <span class="tool-arrow card-arrow"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></span>
+        </a>
+        <a class="tool-card tool-all" href="#calculators">
+          <span class="tool-symbol tool-symbol-all"><svg viewBox="0 0 32 16" aria-hidden="true"><path d="M1 8h22M17 2l7 6-7 6"/></svg></span>
+          <strong>Все калькуляторы</strong>
+          <span class="tool-arrow card-arrow"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="services-section container" id="services" aria-labelledby="services-title">
+      <div class="services-copy">
+        <h2 id="services-title">От компонента до готовой системы</h2>
+        <p>Изготовление оптики на заказ, сборка и юстировка схем, оснащение лабораторий «под ключ».</p>
+        <a class="button button-dark" href="#request">Рассчитать по чертежу <svg class="arrow-icon arrow-icon-short" viewBox="0 0 24 16" aria-hidden="true"><path d="M1 8h18M14 3l5 5-5 5"/></svg></a>
+      </div>
+
+      <figure class="services-photo">
+        <img src="assets/hero-optical-bench.jpg" alt="Лабораторная оптическая установка на оптическом столе" width="1920" height="1294" loading="lazy">
+      </figure>
+    </section>
+
+    <section class="buyers-section container" id="buyers" aria-labelledby="buyers-title">
+      <div class="buyers-main">
+        <h2 id="buyers-title">Закупки для организаций и участие в тендерах</h2>
+      </div>
+      <div class="buyers-action">
+        <span class="buyers-tag">B2B / 223-ФЗ / 44-ФЗ</span>
+        <p>Счёт, электронный документооборот и комплект документов для закупки.</p>
+        <a class="button button-dark" href="#request">Запросить КП <svg class="arrow-icon arrow-icon-short" viewBox="0 0 24 16" aria-hidden="true"><path d="M1 8h18M14 3l5 5-5 5"/></svg></a>
+      </div>
+    </section>
+
+    <section class="series-section container" id="series" aria-labelledby="series-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="series-title">Популярные серии</h2>
+        </div>
+        <a class="section-link" href="#catalog">В каталог <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></a>
+      </div>
+
+      <div class="series-grid">
+        <article class="product-card">
+          <a class="product-image" href="#series"><img src="assets/catalog-scientific-systems.jpg" alt="Cage-система 30 мм в лабораторной установке" width="960" height="640" loading="lazy"><span class="stock-status in-stock">В наличии</span></a>
+          <div class="product-info"><h3><a href="#series">Cage-системы 30 мм</a></h3><div class="product-bottom"><span class="product-price">Цена по запросу</span><a href="#series">Подробнее <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></a></div></div>
+        </article>
+        <article class="product-card">
+          <a class="product-image" href="#series"><img src="assets/series-cage-16.jpg" alt="Компоненты Cage-системы 16 мм на оптическом столе" width="1200" height="800" loading="lazy"><span class="stock-status out-stock">Не в наличии</span></a>
+          <div class="product-info"><h3><a href="#series">Cage-системы 16 мм</a></h3><div class="product-bottom"><span class="product-price">Цена по запросу</span><a href="#series">Подробнее <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></a></div></div>
+        </article>
+        <article class="product-card">
+          <a class="product-image" href="#series"><img src="assets/series-cage-60.jpg" alt="Cage-система 60 мм с оптическими держателями" width="1200" height="673" loading="lazy"><span class="stock-status in-stock">В наличии</span></a>
+          <div class="product-info"><h3><a href="#series">Cage-системы 60 мм</a></h3><div class="product-bottom"><span class="product-price">Цена по запросу</span><a href="#series">Подробнее <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></a></div></div>
+        </article>
+        <article class="product-card">
+          <a class="product-image" href="#series"><img src="assets/catalog-optomechanics.jpg" alt="Высокостабильные держатели серии MT" width="960" height="540" loading="lazy"><span class="stock-status out-stock">Не в наличии</span></a>
+          <div class="product-info"><h3><a href="#series">Высокостабильные держатели серии MT</a></h3><div class="product-bottom"><span class="product-price">Цена по запросу</span><a href="#series">Подробнее <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></a></div></div>
+        </article>
+        <article class="product-card">
+          <a class="product-image" href="#series"><img src="assets/series-ts.jpg" alt="Термостабильный держатель серии TS" width="1200" height="1200" loading="lazy"><span class="stock-status in-stock">В наличии</span></a>
+          <div class="product-info"><h3><a href="#series">Термостабильные держатели TS</a></h3><div class="product-bottom"><span class="product-price">Цена по запросу</span><a href="#series">Подробнее <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></a></div></div>
+        </article>
+        <article class="product-card">
+          <a class="product-image" href="#series"><img src="assets/series-rails.jpg" alt="Оптическая рельса с держателем" width="1200" height="1200" loading="lazy"><span class="stock-status out-stock">Не в наличии</span></a>
+          <div class="product-info"><h3><a href="#series">Оптические рельсы</a></h3><div class="product-bottom"><span class="product-price">Цена по запросу</span><a href="#series">Подробнее <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></a></div></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="knowledge-section container" id="knowledge" aria-labelledby="knowledge-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="knowledge-title">Свежее из базы знаний</h2>
+        </div>
+        <a class="section-link" href="#knowledge">Все материалы <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></a>
+      </div>
+
+      <div class="knowledge-grid">
+        <article class="article-card">
+          <div class="article-cover">
+            <span>Гайд · 8 минут</span>
+            <img src="assets/catalog-optical-components.jpg" alt="Оптическая линза в прецизионном держателе" width="1200" height="1200" loading="lazy">
+          </div>
+          <div class="article-content"><h3>Как выбрать линзу</h3><p>Ключевые параметры, покрытия и фокусное расстояние.</p><a href="#knowledge">Читать материал <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></a></div>
+        </article>
+
+        <article class="article-card">
+          <div class="article-cover">
+            <span>Гайд · 5 минут</span>
+            <img src="assets/hero-optical-bench.jpg" alt="Оптическая лабораторная установка с системой зеркал" width="1200" height="800" loading="lazy">
+          </div>
+          <div class="article-content"><h3>Как выбрать зеркало</h3><p>Покрытия, форма и точность отражающей поверхности.</p><a href="#knowledge">Читать материал <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></a></div>
+        </article>
+
+        <article class="article-card">
+          <div class="article-cover">
+            <span>Гайд · 5 минут</span>
+            <img src="https://images.unsplash.com/photo-1609831168295-4df72a5eea8b?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Круглый светофильтр с цветными отражениями" width="1200" height="800" loading="lazy">
+          </div>
+          <div class="article-content"><h3>Как выбрать светофильтр</h3><p>Типы фильтров и их применение для разных оптических задач.</p><a href="#knowledge">Читать материал <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="faq-section container" id="faq" aria-labelledby="faq-title">
+      <div class="faq-intro">
+        <h2 id="faq-title">Вопросы и ответы</h2>
+        <p>Ответы на частые вопросы о заказе, сроках и подборе аналогов.</p>
+        <div class="faq-actions">
+          <a class="section-link" href="#faq">Все вопросы <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></a>
+          <a class="button button-primary" href="#request">Задать вопрос</a>
+        </div>
+      </div>
+
+      <div class="faq-list">
+        <details open>
+          <summary><span>Как запросить цену и срок поставки?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+          <p>Добавьте позиции в корзину и отправьте заявку; менеджер подготовит счёт или КП.</p>
+        </details>
+        <details>
+          <summary><span>Можно ли купить по 223-ФЗ или 44-ФЗ?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+          <p>Да, подготовим документы и ответим на вопросы по закупке.</p>
+        </details>
+        <details>
+          <summary><span>Поможете найти аналог Thorlabs?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+          <p>Укажите артикул в поиске или отправьте спецификацию инженеру.</p>
+        </details>
+        <details>
+          <summary><span>Можно заказать изготовление по чертежу?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+          <p>Да, приложите чертёж или схему к запросу для предварительной оценки.</p>
+        </details>
+        <details>
+          <summary><span>Как отправить спецификацию на несколько позиций?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+          <p>Загрузите файл .xls или .pdf в форму заявки.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="about-section container" id="about" aria-labelledby="about-title">
+      <figure class="about-photo">
+        <img src="assets/series-rails.jpg" alt="Оптические компоненты LBTEK: фильтры и оптика" width="1200" height="1200" loading="lazy">
+      </figure>
+      <div class="about-copy">
+        <h2 id="about-title">Высокоточное оборудование для точных задач</h2>
+        <p>Поставляем оптические и оптомеханические компоненты, приборы и оборудование для научных лабораторий, инженерных центров и производственных предприятий.</p>
+        <a class="section-link" href="#about">О компании <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M4 10 10 4M6 4h4v4"/></svg></a>
+      </div>
+    </section>
+
+    <section class="request-section container" id="request" aria-labelledby="request-title">
+      <div class="request-copy">
+        <h2 id="request-title">Отправьте список позиций инженеру</h2>
+        <p>Прикрепите файл .xls или .pdf — мы поможем с подбором и подготовим предложение.</p>
+        <div class="request-steps">
+          <div><span>01</span><p>Ответит менеджер или инженер</p></div>
+          <div><span>02</span><p>Цена и срок — в счёте или КП</p></div>
+        </div>
+      </div>
+
+      <form class="request-form" id="request-form">
+        <label class="upload-zone" id="upload-zone" for="spec-file">
+          <input id="spec-file" type="file" accept=".xls,.xlsx,.pdf">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M4 15v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/></svg>
+          <span><strong id="upload-title">Перетащите файл или выберите на компьютере</strong><span id="file-name">.xls / .xlsx / .pdf</span></span>
+        </label>
+
+        <div class="form-fields">
+          <label><span>Ваше имя</span><input type="text" name="name" autocomplete="name" placeholder="Имя и фамилия" required></label>
+          <label><span>Телефон или почта</span><input type="text" name="contact" autocomplete="email" placeholder="Для связи по заявке" required></label>
+        </div>
+
+        <label class="consent-field"><input type="checkbox" name="consent" required><span>Согласен на обработку персональных данных</span></label>
+        <button class="button button-primary" type="submit">Отправить спецификацию <svg class="arrow-icon arrow-icon-short" viewBox="0 0 24 16" aria-hidden="true"><path d="M1 8h18M14 3l5 5-5 5"/></svg></button>
+        <p class="form-feedback" id="form-feedback" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer container" id="contacts">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="#top" aria-label="ЛБТЭК — на главную"><img src="assets/lbtech-red.svg" alt="ЛБТЭК" width="116" height="28"></a>
+        <p>Оптика и оптомеханика<br>для лабораторий</p>
+        <span>ИНН · ОГРН · документы</span>
+      </div>
+      <div class="footer-column"><strong>Каталог</strong><a href="#catalog">Все направления</a><a href="#solutions">Решения</a><a href="#services">Услуги</a><a href="#calculators">Калькуляторы</a></div>
+      <div class="footer-column"><strong>Покупателям</strong><a href="#buyers">Юридическим лицам</a><a href="#buyers">Доставка и документы</a><a href="#request">Запросить КП</a><a href="#knowledge">База знаний</a></div>
+      <div class="footer-column footer-contacts"><strong>Контакты</strong><a href="tel:+74951366368">+7 (495) 136-63-68</a><a href="mailto:info@lbtek.shop">info@lbtek.shop</a></div>
+    </div>
+    <div class="footer-bottom"><span>© ЛБТЭК, 2026</span><div><a href="#contacts">Реквизиты</a><a href="#contacts">Политика конфиденциальности</a><a href="#contacts">Оферта</a></div><span>Главная страница</span></div>
+  </footer>
+</body>
+</html>

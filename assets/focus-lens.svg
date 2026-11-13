@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 220" fill="none">
+  <defs>
+    <linearGradient id="glass" x1="372" y1="40" x2="488" y2="70" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f8fbff" stop-opacity=".85"/>
+      <stop offset=".08" stop-color="#afbac2" stop-opacity=".55"/>
+      <stop offset=".32" stop-color="#75828c" stop-opacity=".2"/>
+      <stop offset=".68" stop-color="#45515b" stop-opacity=".5"/>
+      <stop offset=".88" stop-color="#dce1e5" stop-opacity=".64"/>
+      <stop offset="1" stop-color="#626c75" stop-opacity=".3"/>
+    </linearGradient>
+    <radialGradient id="flare">
+      <stop stop-color="#ffa299" stop-opacity=".9"/>
+      <stop offset=".2" stop-color="#f84242" stop-opacity=".6"/>
+      <stop offset="1" stop-color="#d32536" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ray">
+      <stop stop-color="#ef4552" stop-opacity="0"/>
+      <stop offset=".13" stop-color="#ff6971"/>
+      <stop offset="1" stop-color="#f53f50"/>
+    </linearGradient>
+  </defs>
+  <g transform="rotate(7 425 110)">
+    <ellipse cx="431" cy="110" rx="57" ry="173" fill="url(#glass)" stroke="#c5ced5" stroke-opacity=".75"/>
+    <ellipse cx="423" cy="110" rx="50" ry="173" stroke="#e6ebee" stroke-opacity=".42"/>
+    <g stroke="url(#ray)" stroke-width="1.6">
+      <path d="M12 131 82 110 380 57 477 51H760"/>
+      <path d="M12 110H760"/>
+      <path d="M12 89 82 110 380 163 477 169H760"/>
+    </g>
+    <circle cx="82" cy="110" r="23" fill="url(#flare)"/>
+    <circle cx="82" cy="110" r="2.5" fill="#ffe6db"/>
+  </g>
+</svg>
