@@ -60,6 +60,8 @@ const navSearchToggle = document.querySelector('.nav-search-toggle');
 const navSearchInput = document.querySelector('.nav-search input');
 const navReturnToggle = document.querySelector('.nav-return-toggle');
 const searchResults = document.querySelector('#search-results');
+const heroSearchInput = document.querySelector('.hero-search input');
+const heroSearchResults = document.querySelector('#hero-search-results');
 
 function positionCatalogPanel() {
   const gap = Number.parseFloat(getComputedStyle(catalogPanel).getPropertyValue('--catalog-gap')) || 0;
@@ -101,32 +103,37 @@ function setSearch(open) {
   if (!open) searchResults.hidden = true;
 }
 
-navSearchInput.addEventListener('input', () => {
-  searchResults.hidden = navSearchInput.value.trim().length === 0;
-});
-
-searchResults.querySelectorAll('.search-result-terms span').forEach((term) => {
-  term.addEventListener('click', () => {
-    navSearchInput.value = term.textContent;
-    searchResults.hidden = false;
-    navSearchInput.focus();
+function bindSearchResults(input, results) {
+  input.addEventListener('input', () => {
+    results.hidden = input.value.trim().length === 0;
   });
-});
 
-searchResults.querySelectorAll('.search-result-items button').forEach((result) => {
-  result.addEventListener('click', () => {
-    navSearchInput.value = result.textContent.trim();
-    searchResults.hidden = true;
-    navSearchInput.focus();
+  results.querySelectorAll('.search-result-terms span').forEach((term) => {
+    term.addEventListener('click', () => {
+      input.value = term.textContent;
+      results.hidden = false;
+      input.focus();
+    });
   });
-});
 
-searchResults.querySelectorAll('a').forEach((category) => {
-  category.addEventListener('click', () => {
-    searchResults.hidden = true;
-    setSearch(false);
+  results.querySelectorAll('.search-result-items button').forEach((result) => {
+    result.addEventListener('click', () => {
+      input.value = result.textContent.trim();
+      results.hidden = true;
+      input.focus();
+    });
   });
-});
+
+  results.querySelectorAll('a').forEach((category) => {
+    category.addEventListener('click', () => {
+      results.hidden = true;
+      if (input === navSearchInput) setSearch(false);
+    });
+  });
+}
+
+bindSearchResults(navSearchInput, searchResults);
+bindSearchResults(heroSearchInput, heroSearchResults);
 
 catalogToggle.addEventListener('click', () => {
   const open = catalogPanel.hidden;
