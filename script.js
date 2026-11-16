@@ -92,7 +92,7 @@ function setMenu(open) {
 }
 
 function setSearch(open) {
-  if (open) mainNav.style.width = `${mainNav.offsetWidth}px`;
+  mainNav.style.width = open && window.innerWidth > 1280 ? `${mainNav.offsetWidth}px` : '';
   header.classList.toggle('search-open', open);
   navSearchToggle.setAttribute('aria-expanded', String(open));
   mobileSearchToggle.setAttribute('aria-expanded', String(open));
@@ -111,9 +111,9 @@ catalogToggle.addEventListener('click', () => {
 menuToggle.addEventListener('click', () => {
   const open = !header.classList.contains('nav-open');
   setMenu(open);
+  setSearch(open && window.innerWidth <= 455);
   if (open) {
     setCatalog(false);
-    setSearch(false);
   }
 });
 
@@ -166,7 +166,7 @@ document.addEventListener('keydown', (event) => {
 window.addEventListener('resize', () => {
   setSearch(false);
   mainNav.style.width = '';
-  if (window.innerWidth > 1100) setMenu(false);
+  if (window.innerWidth > 1280) setMenu(false);
 });
 
 const requestForm = document.querySelector('#request-form');
