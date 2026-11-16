@@ -104,14 +104,29 @@ function setSearch(open) {
 }
 
 function bindSearchResults(input, results) {
+  const form = input.closest('form');
+  const clearButton = form.querySelector('.search-clear');
+
+  function updateSearchValue() {
+    const hasValue = input.value.trim().length > 0;
+    results.hidden = !hasValue;
+    form.classList.toggle('has-value', hasValue);
+  }
+
   input.addEventListener('input', () => {
-    results.hidden = input.value.trim().length === 0;
+    updateSearchValue();
+  });
+
+  clearButton.addEventListener('click', () => {
+    input.value = '';
+    updateSearchValue();
+    input.focus();
   });
 
   results.querySelectorAll('.search-result-terms span').forEach((term) => {
     term.addEventListener('click', () => {
       input.value = term.textContent;
-      results.hidden = false;
+      updateSearchValue();
       input.focus();
     });
   });
@@ -120,6 +135,7 @@ function bindSearchResults(input, results) {
     result.addEventListener('click', () => {
       input.value = result.textContent.trim();
       results.hidden = true;
+      form.classList.toggle('has-value', input.value.length > 0);
       input.focus();
     });
   });

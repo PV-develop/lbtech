@@ -331,7 +331,8 @@ svg {
 }
 
 .nav-search-toggle,
-.nav-return-toggle {
+.nav-return-toggle,
+.search-clear {
   display: grid;
   place-items: center;
   width: 40px;
@@ -389,7 +390,8 @@ svg {
 }
 
 .site-header.search-open .nav-search input {
-  width: 100%;
+  width: auto;
+  flex: 1;
   padding-right: 16px;
   opacity: 1;
 }
@@ -980,10 +982,40 @@ svg {
 }
 
 .hero-search input::-webkit-search-cancel-button {
-  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
 }
 
-.hero-search button {
+.search-clear {
+  display: none;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  flex: none;
+}
+
+.has-value .search-clear {
+  display: grid;
+}
+
+.search-clear-icon {
+  transform: rotate(45deg);
+}
+
+.search-clear:hover .search-clear-icon::before,
+.search-clear:hover .search-clear-icon::after {
+  background: var(--accent);
+}
+
+.nav-search input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+
+.hero-search button[type="submit"] {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -998,7 +1030,7 @@ svg {
   transition: background-color 180ms ease, color 180ms ease;
 }
 
-.hero-search button:hover {
+.hero-search button[type="submit"]:hover {
   background: var(--panel-strong);
   color: var(--accent);
 }
