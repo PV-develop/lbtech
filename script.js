@@ -59,6 +59,7 @@ const mainNav = document.querySelector('.main-nav');
 const navSearchToggle = document.querySelector('.nav-search-toggle');
 const navSearchInput = document.querySelector('.nav-search input');
 const navReturnToggle = document.querySelector('.nav-return-toggle');
+const searchResults = document.querySelector('#search-results');
 
 function positionCatalogPanel() {
   const gap = Number.parseFloat(getComputedStyle(catalogPanel).getPropertyValue('--catalog-gap')) || 0;
@@ -97,7 +98,35 @@ function setSearch(open) {
   navSearchToggle.setAttribute('aria-expanded', String(open));
   mobileSearchToggle.setAttribute('aria-expanded', String(open));
   navSearchInput.tabIndex = open ? 0 : -1;
+  if (!open) searchResults.hidden = true;
 }
+
+navSearchInput.addEventListener('input', () => {
+  searchResults.hidden = navSearchInput.value.trim().length === 0;
+});
+
+searchResults.querySelectorAll('.search-result-terms span').forEach((term) => {
+  term.addEventListener('click', () => {
+    navSearchInput.value = term.textContent;
+    searchResults.hidden = false;
+    navSearchInput.focus();
+  });
+});
+
+searchResults.querySelectorAll('.search-result-items button').forEach((result) => {
+  result.addEventListener('click', () => {
+    navSearchInput.value = result.textContent.trim();
+    searchResults.hidden = true;
+    navSearchInput.focus();
+  });
+});
+
+searchResults.querySelectorAll('a').forEach((category) => {
+  category.addEventListener('click', () => {
+    searchResults.hidden = true;
+    setSearch(false);
+  });
+});
 
 catalogToggle.addEventListener('click', () => {
   const open = catalogPanel.hidden;
