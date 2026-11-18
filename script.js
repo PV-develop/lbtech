@@ -60,8 +60,6 @@ const navSearchToggle = document.querySelector('.nav-search-toggle');
 const navSearchInput = document.querySelector('.nav-search input');
 const navReturnToggle = document.querySelector('.nav-return-toggle');
 const searchResults = document.querySelector('#search-results');
-const heroSearchInput = document.querySelector('.hero-search input');
-const heroSearchResults = document.querySelector('#hero-search-results');
 
 function positionCatalogPanel() {
   const gap = Number.parseFloat(getComputedStyle(catalogPanel).getPropertyValue('--catalog-gap')) || 0;
@@ -149,7 +147,6 @@ function bindSearchResults(input, results) {
 }
 
 bindSearchResults(navSearchInput, searchResults);
-bindSearchResults(heroSearchInput, heroSearchResults);
 
 catalogToggle.addEventListener('click', () => {
   const open = catalogPanel.hidden;
