@@ -1308,29 +1308,36 @@ svg {
 }
 
 .stats-focus {
+  position: relative;
   overflow: hidden;
   background: radial-gradient(ellipse 52% 82% at 82% 14%, #424345 0%, #292a2c 48%, transparent 100%), var(--text);
 }
 
-.stats-focus .stats-heading {
-  position: relative;
-  min-height: 210px;
-  align-items: center;
-}
-
-.stats-focus .stats-heading::before {
+.stats-focus::before {
   content: "";
   position: absolute;
-  inset: -40px -12% 0 25%;
-  background: url("assets/optical-wedge.png") 35% center / 150% auto no-repeat;
+  inset: 0;
+  z-index: 0;
+  background: url("assets/optical-wedge.png") 12% calc(100% + 100px) / 150% auto no-repeat;
   filter: grayscale(1);
   opacity: .48;
   pointer-events: none;
 }
 
+.stats-focus .stats-heading {
+  position: relative;
+  z-index: 1;
+  min-height: 0;
+  align-items: flex-start;
+  gap: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
 .stats-focus .stats-heading h2 {
   position: relative;
-  max-width: min(46%, 560px);
+  max-width: none;
+  white-space: nowrap;
 }
 
 @media (max-width: 700px) {
@@ -1339,18 +1346,30 @@ svg {
   }
 
   .stats-focus .stats-heading {
-    padding-top: 132px;
+    padding-top: 0;
   }
 
-  .stats-focus .stats-heading::before {
-    inset: -24px calc(-24px - 14%) auto 0;
-    height: 144px;
-    background-position: left 58%;
+  .stats-focus::before {
+    display: none;
   }
 
   .stats-focus .stats-heading h2 {
     max-width: 100%;
+    white-space: normal;
   }
+}
+
+.stats-focus .stats-grid {
+  position: relative;
+  z-index: 1;
+  margin-top: 32px;
+}
+
+.stats-focus .stat-item,
+.stats-focus .stat-item:first-child,
+.stats-focus .stat-item:last-child {
+  padding: 0;
+  border: 0;
 }
 
 .stats-grid {
@@ -1391,28 +1410,6 @@ svg {
   line-height: 20px;
 }
 
-.stat-additional {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 24px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, .14);
-}
-
-.stat-additional strong {
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 24px;
-  font-variant-numeric: tabular-nums;
-}
-
-.stat-additional span {
-  color: rgba(255, 255, 255, .64);
-  font-size: 12px;
-  line-height: 16px;
-}
-
 .solutions-section {
   margin-bottom: 80px;
 }
@@ -1427,6 +1424,15 @@ svg {
 }
 
 .section-heading > .section-link {
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: var(--text);
+  color: var(--surface);
+  transition: background-color 180ms ease;
+}
+
+.series-heading-actions > .section-link {
   min-height: 44px;
   padding: 0 16px;
   border-radius: 999px;
@@ -1451,6 +1457,11 @@ svg {
 }
 
 .section-heading > .section-link:hover {
+  background: #34363A;
+  color: var(--surface);
+}
+
+.series-heading-actions > .section-link:hover {
   background: #34363A;
   color: var(--surface);
 }
@@ -1782,8 +1793,44 @@ svg {
 
 .series-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: auto;
+  grid-auto-columns: calc((100% - 48px) / 4);
+  grid-auto-flow: column;
   gap: 16px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.series-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.series-grid .product-card {
+  scroll-snap-align: start;
+}
+
+.series-heading-actions,
+.series-slider-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.series-slider-controls button:disabled {
+  opacity: .4;
+  cursor: default;
+}
+
+.series-slider-controls .hero-slider-button {
+  background: var(--text);
+  color: var(--surface);
+}
+
+.series-slider-controls .hero-slider-button:hover:not(:disabled) {
+  background: #34363A;
+  color: var(--surface);
 }
 
 .product-card,
@@ -3161,8 +3208,15 @@ svg {
     margin-top: 8px;
   }
 
-  .stat-additional {
-    margin-top: 16px;
+  .stats-focus .stats-grid {
+    margin-top: 24px;
+  }
+
+  .stats-focus .stat-item,
+  .stats-focus .stat-item:first-child,
+  .stats-focus .stat-item:last-child {
+    padding: 0;
+    border: 0;
   }
 }
 
@@ -3280,7 +3334,8 @@ svg {
 
 @media (max-width: 1100px) {
   .series-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: none;
+    grid-auto-columns: calc((100% - 16px) / 2);
   }
 }
 
@@ -3290,7 +3345,8 @@ svg {
   }
 
   .series-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: none;
+    grid-auto-columns: 86%;
     gap: 8px;
   }
 

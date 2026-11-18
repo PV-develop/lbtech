@@ -61,6 +61,37 @@ const navSearchInput = document.querySelector('.nav-search input');
 const navReturnToggle = document.querySelector('.nav-return-toggle');
 const searchResults = document.querySelector('#search-results');
 
+const seriesGrid = document.querySelector('#series-grid');
+if (seriesGrid) {
+  const seriesCards = [...seriesGrid.querySelectorAll('.product-card')];
+  const seriesButtons = [...document.querySelectorAll('[data-series-direction]')];
+  let seriesScrollFrame = 0;
+
+  function updateSeriesControls() {
+    const maxScroll = seriesGrid.scrollWidth - seriesGrid.clientWidth;
+    seriesButtons.forEach((button) => {
+      const isPrevious = button.dataset.seriesDirection === 'previous';
+      button.disabled = isPrevious ? seriesGrid.scrollLeft <= 1 : seriesGrid.scrollLeft >= maxScroll - 1;
+    });
+  }
+
+  seriesButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const card = seriesCards[0];
+      const gap = Number.parseFloat(getComputedStyle(seriesGrid).columnGap) || 0;
+      const direction = button.dataset.seriesDirection === 'next' ? 1 : -1;
+      seriesGrid.scrollBy({ left: direction * (card.getBoundingClientRect().width + gap), behavior: 'smooth' });
+    });
+  });
+
+  seriesGrid.addEventListener('scroll', () => {
+    window.cancelAnimationFrame(seriesScrollFrame);
+    seriesScrollFrame = window.requestAnimationFrame(updateSeriesControls);
+  }, { passive: true });
+  window.addEventListener('resize', updateSeriesControls);
+  updateSeriesControls();
+}
+
 function positionCatalogPanel() {
   const gap = Number.parseFloat(getComputedStyle(catalogPanel).getPropertyValue('--catalog-gap')) || 0;
   const top = navShell.getBoundingClientRect().bottom + gap;
