@@ -2231,7 +2231,7 @@ svg {
 .about-photo {
   min-width: 0;
   min-height: 0;
-  aspect-ratio: 10 / 7;
+  aspect-ratio: 25 / 14;
   margin: 0;
   overflow: hidden;
   border-radius: var(--radius-large);
@@ -2246,13 +2246,28 @@ svg {
 }
 
 .about-copy {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   min-width: 0;
   padding: 40px;
   border-radius: var(--radius-large);
-  background: var(--panel);
+  background: linear-gradient(110deg, var(--accent) 28%, #094C2B);
+  color: var(--surface);
+}
+
+.about-copy::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0 -5% 0 8%;
+  background: url("../assets/about-optical-glass.png") right center / 112% auto no-repeat;
+  mix-blend-mode: screen;
+  opacity: .3;
+  pointer-events: none;
 }
 
 .about-copy h2 {
@@ -2267,7 +2282,7 @@ svg {
 .about-copy p {
   max-width: 680px;
   margin: 24px 0 16px;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, .78);
   font-size: 16px;
   line-height: 24px;
 }
@@ -2276,14 +2291,14 @@ svg {
   min-height: 44px;
   padding: 0 16px;
   border-radius: 999px;
-  background: var(--text);
-  color: var(--surface);
+  background: var(--surface);
+  color: var(--text);
   transition: background-color 180ms ease;
 }
 
 .about-copy > .section-link:hover {
-  background: #304738;
-  color: var(--surface);
+  background: var(--accent-soft);
+  color: var(--text);
 }
 
 .request-section {
@@ -2293,7 +2308,7 @@ svg {
   margin-bottom: 80px;
   padding: 16px;
   border-radius: var(--radius-large);
-  background: var(--accent);
+  background: var(--text);
 }
 
 .request-copy {
@@ -2884,8 +2899,13 @@ svg {
   }
 
   .hero-info h1 {
-    font-size: 34.67px;
-    line-height: 38.67px;
+    font-size: 30px;
+    line-height: 32px;
+  }
+
+  .hero-description {
+    font-size: 24px;
+    line-height: 32px;
   }
 }
 
@@ -2988,8 +3008,8 @@ svg {
   }
 
   .hero-info h1 {
-    font-size: 26.67px;
-    line-height: 28.67px;
+    font-size: 30px;
+    line-height: 32px;
   }
 
   .hero-intro-row {
@@ -2997,8 +3017,8 @@ svg {
   }
 
   .hero-description {
-    font-size: 15px;
-    line-height: 23px;
+    font-size: 24px;
+    line-height: 32px;
   }
 
   .hero-catalog {
@@ -3430,7 +3450,7 @@ svg {
 
   .about-photo {
     min-height: 0;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 20 / 9;
   }
 
   .request-section {
@@ -3458,11 +3478,16 @@ svg {
   }
 
   .about-photo {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 5 / 3;
   }
 
   .about-copy {
     padding: 24px;
+  }
+
+  .about-copy::before {
+    background-size: 150% auto;
+    opacity: .22;
   }
 
   .about-copy h2,
