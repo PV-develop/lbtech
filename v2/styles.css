@@ -2255,8 +2255,8 @@ svg {
   min-width: 0;
   padding: 40px;
   border-radius: var(--radius-large);
-  background: linear-gradient(110deg, var(--accent) 28%, #094C2B);
-  color: var(--surface);
+  background: var(--panel);
+  color: var(--text);
 }
 
 .about-copy::before {
@@ -2265,8 +2265,8 @@ svg {
   z-index: -1;
   inset: 0 -5% 0 8%;
   background: url("../assets/about-optical-glass.png") right center / 112% auto no-repeat;
-  mix-blend-mode: screen;
-  opacity: .3;
+  mix-blend-mode: multiply;
+  opacity: .12;
   pointer-events: none;
 }
 
@@ -2282,7 +2282,7 @@ svg {
 .about-copy p {
   max-width: 680px;
   margin: 24px 0 16px;
-  color: rgba(255, 255, 255, .78);
+  color: var(--text-secondary);
   font-size: 16px;
   line-height: 24px;
 }
@@ -2291,14 +2291,14 @@ svg {
   min-height: 44px;
   padding: 0 16px;
   border-radius: 999px;
-  background: var(--surface);
-  color: var(--text);
+  background: var(--text);
+  color: var(--surface);
   transition: background-color 180ms ease;
 }
 
 .about-copy > .section-link:hover {
-  background: var(--accent-soft);
-  color: var(--text);
+  background: #304738;
+  color: var(--surface);
 }
 
 .request-section {
