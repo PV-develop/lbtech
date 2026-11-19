@@ -175,7 +175,6 @@ svg {
   display: block;
   width: 75px;
   height: auto;
-  filter: brightness(0) invert(.58);
 }
 
 .catalog-toggle .catalog-icon {
@@ -2958,7 +2957,15 @@ svg {
   }
 
   .brand img {
-    width: 96px;
+    width: 80px;
+  }
+
+  .brand-cluster {
+    gap: 8px;
+  }
+
+  .partner-brand {
+    width: 58px;
   }
 
   .header-actions {
@@ -3077,13 +3084,16 @@ svg {
 }
 
 @media (max-width: 420px) {
-  .brand-divider,
-  .partner-brand {
+  .brand-divider {
     display: none;
   }
 
   .brand-cluster {
-    gap: 0;
+    gap: 6px;
+  }
+
+  .partner-brand {
+    width: 52px;
   }
 }
 
@@ -3125,8 +3135,8 @@ svg {
   }
 
   .section-heading h2 {
-    font-size: 37px;
-    line-height: 36px;
+    font-size: 30px;
+    line-height: 32px;
   }
 
   .section-heading > p br {
@@ -3187,8 +3197,8 @@ svg {
   }
 
   .stats-heading h2 {
-    font-size: 37px;
-    line-height: 36px;
+    font-size: 30px;
+    line-height: 32px;
   }
 
   .stats-grid {
@@ -3306,8 +3316,8 @@ svg {
   }
 
   .services-copy h2 {
-    font-size: 37px;
-    line-height: 36px;
+    font-size: 30px;
+    line-height: 32px;
   }
 
   .services-photo {
@@ -3338,8 +3348,8 @@ svg {
   }
 
   .buyers-main h2 {
-    font-size: 37px;
-    line-height: 36px;
+    font-size: 30px;
+    line-height: 32px;
   }
 }
 
@@ -3396,8 +3406,8 @@ svg {
   }
 
   .faq-intro h2 {
-    font-size: 37px;
-    line-height: 36px;
+    font-size: 30px;
+    line-height: 32px;
   }
 
   .faq-intro p {
@@ -3457,8 +3467,8 @@ svg {
 
   .about-copy h2,
   .request-copy h2 {
-    font-size: 37px;
-    line-height: 36px;
+    font-size: 30px;
+    line-height: 32px;
   }
 
   .request-section {
@@ -3514,7 +3524,11 @@ svg {
   }
 
   .brand img {
-    width: 84px;
+    width: 64px;
+  }
+
+  .partner-brand {
+    width: 40px;
   }
 
   .catalog-toggle,
